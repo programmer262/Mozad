@@ -30,7 +30,6 @@ ALLOWED_HOSTS = ['khadioumelmouminine.herokuapp.com','127.0.0.1']
 
 
 INSTALLED_APPS = [
-   'download.apps.DownloadConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,7 +38,6 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'download.apps.DownloadConfig',
-    'download',
 ]
 
 MIDDLEWARE = [
