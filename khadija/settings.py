@@ -90,7 +90,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'download.apps.DownloadConfig',
+    'download',
 ]
 
 MIDDLEWARE = [
