@@ -173,10 +173,13 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-
+TEMPLATE_URL = '/download/Templates'
+TEMPLATES_DIRS = [
+    os.path.join(BASE_DIR, 'download/Templates')
+]
+STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
+STATIC_URL = STATIC_HOST + '/static/'
 STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
