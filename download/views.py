@@ -17,15 +17,15 @@ from .models import *
 def cour(request):
     cours = Cour.objects.all()
     context = {'cours':cours}
-    return render(request, 'Files/docfiles.html', context)
+    return render(request, 'docfiles.html', context)
 def exercice(request):
     exercices = Exercice.objects.all()
     context = {'exercices':exercices}
-    return render(request, 'Files/exercices.html', context)
+    return render(request, 'exercices.html', context)
 def correction(request):
     corrigés = Corrigé.objects.all()
     context = {'corrigés':corrigés}
-    return render(request, 'Files/correction.html', context)
+    return render(request, 'correction.html', context)
   
 def registerPage(request):
 	if request.user.is_authenticated:
@@ -60,7 +60,7 @@ def loginPage(request):
 			else:
 	 			messages.info(request, 'Username OR password is incorrect')
 		context = {}
-		return render(request, 'Files/login.html', context)
+		return render(request, 'login.html', context)
 
 def logoutUser(request):
 	logout(request)
@@ -69,9 +69,9 @@ def logoutUser(request):
 def classe(request):
     classes = Classe.objects.all()
     context = {'classes':classes}
-    return render(request, 'Files/Live.html', context)
+    return render(request, 'Live.html', context)
 def live(request):
     lives = Live_ended.objects.all()
     context = {'lives':lives}
-    return render(request, 'Files/endlives.html', context)
+    return render(request, 'endlives.html', context)
   
