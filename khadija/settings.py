@@ -83,13 +83,13 @@ JAZZMIN_SETTINGS = {
 }
 
 INSTALLED_APPS = [
-    'download.apps.DownloadConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'download.apps.DownloadConfig',
     'download',
 ]
 
