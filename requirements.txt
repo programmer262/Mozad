@@ -28,5 +28,5 @@ django-jazzmin==2.2.11
 django-on-heroku==1.1.2
 django-storages==1.9.1
 postgres==2.2.1
-psycopg2==2.7.1
+psycopg2==2.7.7
 pytz==2017.2
