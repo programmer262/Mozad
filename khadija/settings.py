@@ -30,7 +30,8 @@ ALLOWED_HOSTS = ['khadioumelmouminine.herokuapp.com','127.0.0.1']
 
 
 INSTALLED_APPS = [
-   'download.apps.DownloadConfig',
+    'jazzmin'
+    'download.apps.DownloadConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
