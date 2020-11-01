@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'khadija.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd9t4mvafduhv9p',
+        'USER': 'bkkhzfwphfesaa',
+        'PASSWORD': '7afad86151ecdb48fc1003fb66365fac91a2e0b745b6dac95fc2a6320902d24c',
+        'HOST': 'ec2-34-239-241-25.compute-1.amazonaws.com',
+        'PORT': 5432,
     }
 }
 
