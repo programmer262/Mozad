@@ -54,7 +54,7 @@ ROOT_URLCONF = 'khadija.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates/Files,'],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,9 +117,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-TEMPLATE_URL = 'templates/Files'
+TEMPLATE_URL = 'templates'
 TEMPLATES_DIRS = [
-    os.path.join(BASE_DIR, 'templates/Files')
+    os.path.join(BASE_DIR, 'templates')
 ]
 STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
 STATIC_URL = STATIC_HOST + '/static/'
