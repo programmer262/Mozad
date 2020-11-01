@@ -109,7 +109,7 @@ ROOT_URLCONF = 'khadija.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/download/Templates/Files'],
+        'DIRS': ['/download/Templates/Files,'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
