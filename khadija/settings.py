@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -28,17 +30,21 @@ ALLOWED_HOSTS = ['khadioumelmouminine.herokuapp.com','127.0.0.1']
 
 
 INSTALLED_APPS = [
+   'download.apps.DownloadConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'download.apps.DownloadConfig',
+    'download',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -72,13 +78,18 @@ WSGI_APPLICATION = 'khadija.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+'default': {
+'ENGINE': 'django.db.backends.postgresql_psycopg2',
+'NAME': os.environ.get('DB_NAME', ''),
+'USER': 'bkkhzfwphfesaa',
+'PASSWORD': '7afad86151ecdb48fc1003fb66365fac91a2e0b745b6dac95fc2a6320902d24c',
+'HOST': 'ec2-34-239-241-25.compute-1.amazonaws.com',
+'PORT': '5432',
     }
 }
 
-
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -121,3 +132,4 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/docs/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/docs')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
