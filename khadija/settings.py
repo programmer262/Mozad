@@ -30,8 +30,7 @@ ALLOWED_HOSTS = ['khadioumelmouminine.herokuapp.com','127.0.0.1']
 
 
 INSTALLED_APPS = [
-   
-
+   'download.apps.DownloadConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +39,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'download.apps.DownloadConfig',
+    'download',
 ]
 
 MIDDLEWARE = [
@@ -78,18 +78,13 @@ WSGI_APPLICATION = 'khadija.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-'default': {
-'ENGINE': 'django.db.backends.postgresql_psycopg2',
-'NAME': os.environ.get('DB_NAME', ''),
-'USER': 'bkkhzfwphfesaa',
-'PASSWORD': '7afad86151ecdb48fc1003fb66365fac91a2e0b745b6dac95fc2a6320902d24c',
-'HOST': 'ec2-34-239-241-25.compute-1.amazonaws.com',
-'PORT': '5432',
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -124,7 +119,7 @@ USE_TZ = True
 
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT=    os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
@@ -132,4 +127,3 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/docs/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/docs')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
