@@ -1,1 +1,1 @@
-web: gunicorn khadija.wsgi --worker-class gevent
+web: gunicorn khadija.wsgi
