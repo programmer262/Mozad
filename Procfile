@@ -1,1 +1,1 @@
-web: gunicorn khadija.wsgi --worker-class=gevent --timeout=120000 
+web: gunicorn khadija.wsgi --worker-class=gevent --timeout=120000000000000000000000000000000000000000000000000000000000000000000000
