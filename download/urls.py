@@ -6,9 +6,9 @@ urlpatterns = [
     path('Cours',views.cour,name='cour'),
     path('exercice/',views.exercice,name='exercice'),
     path('correction/',views.correction,name='correction'),
-  	path('register/', views.registerPage, name="register"),
-	path('', views.loginPage, name="login"),  
-	path('logout/', views.logoutUser, name="logout"),
+  	path('accounts/register/', views.registerPage, name="register"),
+	path('accounts/login/', views.loginPage, name="login"),  
+	path('accounts/logout/', views.logoutUser, name="logout"),
 	path('classe/', views.classe, name="classe"),
 	path('endlive/', views.live, name="live"),
 
