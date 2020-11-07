@@ -9,6 +9,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -138,6 +141,11 @@ DATABASES = {
         'PORT': 5432,
     }
 }
+DATABASES['default'] = cloudinary.config( 
+  cloud_name = "dgvhdvy1r", 
+  api_key = "861527452988112", 
+  api_secret = "bfJeRi4bar8B9n_bHSIN0i2zLak" 
+)
 
 
 # Password validation
@@ -171,8 +179,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 TEMPLATE_URL = 'templates'
 TEMPLATES_DIRS = [
     os.path.join(BASE_DIR, 'templates')
