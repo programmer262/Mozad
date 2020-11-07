@@ -46,7 +46,7 @@ def registerPage(request):
 
 def loginPage(request):
 	if request.user.is_authenticated:
-		return redirect('cour')
+	return redirect('cour')
 	else:
 		if request.method == 'POST':
 			username = request.POST.get('username')
@@ -59,8 +59,8 @@ def loginPage(request):
 				return redirect('cour')
 			else:
 	 			messages.info(request, 'Username OR password is incorrect')
-		context = {}
-		return render(request, 'login.html', context)
+	context = {}
+	return render(request, 'login.html', context)
 
 def logoutUser(request):
 	logout(request)
@@ -74,7 +74,6 @@ def live(request):
     lives = Live_ended.objects.all()
     context = {'lives':lives}
     return render(request, 'endlives.html', context)
- from django.contrib.auth.decorators import login_required
 @login_required
 def Cour(request):
     return render(request,"docfiles.html",{})
