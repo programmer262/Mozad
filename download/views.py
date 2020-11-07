@@ -74,4 +74,7 @@ def live(request):
     lives = Live_ended.objects.all()
     context = {'lives':lives}
     return render(request, 'endlives.html', context)
-  
+ from django.contrib.auth.decorators import login_required
+@login_required
+def Cour(request):
+    return render(request,"docfiles.html",{})
