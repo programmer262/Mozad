@@ -18,10 +18,12 @@ def cour(request):
     cours = Cour.objects.all()
     context = {'cours':cours}
     return render(request, 'docfiles.html', context)
+@login_required
 def exercice(request):
     exercices = Exercice.objects.all()
     context = {'exercices':exercices}
     return render(request, 'exercices.html', context)
+@login_required
 def correction(request):
     corrigés = Corrigé.objects.all()
     context = {'corrigés':corrigés}
@@ -65,11 +67,12 @@ def loginPage(request):
 def logoutUser(request):
 	logout(request)
 	return redirect('login')
-
+@login_required
 def classe(request):
     classes = Classe.objects.all()
     context = {'classes':classes}
     return render(request, 'Live.html', context)
+@login_required
 def live(request):
     lives = Live_ended.objects.all()
     context = {'lives':lives}
