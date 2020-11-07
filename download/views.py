@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 from .models import *
 
-
+@login_required
 def cour(request):
     cours = Cour.objects.all()
     context = {'cours':cours}
@@ -74,6 +74,3 @@ def live(request):
     lives = Live_ended.objects.all()
     context = {'lives':lives}
     return render(request, 'endlives.html', context)
-@login_required
-def Cour(request):
-    return render(request,"docfiles.html",{})
