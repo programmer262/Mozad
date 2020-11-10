@@ -102,7 +102,7 @@ class Live_ended (models.Model):
     matiére = models.ForeignKey(Matiére, on_delete=models.SET_NULL, null=True, blank=True)
     cour = models.CharField(max_length=100)
     partie = models.CharField(max_length=100)
-    live = models.CloudinaryField()
+    live = models.FileField()
 
 
     def __str__(self):
