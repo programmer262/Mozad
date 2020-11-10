@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from cloudinary import *
 
 # Create your models here.
 class Matiére(models.Model):
@@ -24,7 +23,7 @@ class Etudiant(models.Model):
     
 class Cour(models.Model):
     professeur = models.ForeignKey(Professeur, on_delete=models.SET_NULL, null=True, blank=True)
-    document = cloudinary.models.CloudinaryField()
+    document = models.FileField()
     cour = models.CharField(max_length=200)
     partie = models.CharField(max_length=200,null=False,blank=False)
     def __str__(self):
