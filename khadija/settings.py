@@ -48,6 +48,7 @@ JAZZMIN_SETTINGS = {
     ],
    "usermenu_links": [
         {"name": "Support", "url": "https://developers-united.netlify.app", "new_window":True},
+        {"name": "View Site", "url": "download.cour.cour", "new_window":True},
         {"model": "auth.user"}
     ],
     "show_sidebar": True,
