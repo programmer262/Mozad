@@ -39,6 +39,7 @@ JAZZMIN_SETTINGS = {
 
         # external url that opens in a new window (Permissions can be added)
         {"name": "Support", "url":"https://developers-united.netlify.app", "new_window":True},
+        {"name": "View Site", "url": "https://khadioumelmouminine.herokuapp.com/", "new_window":True},
 
         # model admin to link to (Permissions checked against model)
         {"model": "auth.User"},
@@ -48,7 +49,7 @@ JAZZMIN_SETTINGS = {
     ],
    "usermenu_links": [
         {"name": "Support", "url": "https://developers-united.netlify.app", "new_window":True},
-        {"name": "View Site", "url": "download.cour.cour", "new_window":True},
+        {"name": "View Site", "url": "https://khadioumelmouminine.herokuapp.com/", "new_window":True},
         {"model": "auth.user"}
     ],
     "show_sidebar": True,
