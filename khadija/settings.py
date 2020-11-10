@@ -148,9 +148,6 @@ file.CLOUDINARY = {
 }
 
 # Cloudinary settings using environment variables. Add to your .bashrc
-export CLOUDINARY_CLOUD_NAME="dgvhdvy1r"  
-export CLOUDINARY_API_KEY="861527452988112"  
-export CLOUDINARY_API_SECRET="bfJeRi4bar8B9n_bHSIN0i2zLak"  
 
 # Cloudinary settings using python code. Run before pycloudinary is used.
 import cloudinary
