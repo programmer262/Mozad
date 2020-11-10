@@ -141,7 +141,7 @@ DATABASES = {
     }
 }
 
-file.CLOUDINARY = {
+CLOUDINARY = {
   'cloud_name': 'dgvhdvy1r',  
   'api_key': '861527452988112',  
   'api_secret': 'bfJeRi4bar8B9n_bHSIN0i2zLak',  
