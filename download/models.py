@@ -23,7 +23,7 @@ class Etudiant(models.Model):
     
 class Cour(models.Model):
     professeur = models.ForeignKey(Professeur, on_delete=models.SET_NULL, null=True, blank=True)
-    document = models.FileField()
+    document =models.TextField()
     cour = models.CharField(max_length=200)
     partie = models.CharField(max_length=200,null=False,blank=False)
     def __str__(self):
@@ -40,7 +40,7 @@ class Cour(models.Model):
 
 class Exercice(models.Model):
     professeur = models.ForeignKey(Professeur, on_delete=models.SET_NULL, null=True, blank=True)
-    document = models.FileField()
+    document = models.TextField()
     exercice = models.CharField(max_length=200)
     def __str__(self):
         return self.exercice
@@ -55,7 +55,7 @@ class Exercice(models.Model):
 
 class Corrigé(models.Model):
     professeur = models.ForeignKey(Professeur, on_delete=models.SET_NULL, null=True, blank=True)
-    document = models.FileField()
+    document = models.TextField()
     correction_name = models.CharField(max_length=200)
     def __str__(self):
         return self.correction_name
@@ -102,7 +102,7 @@ class Live_ended (models.Model):
     matiére = models.ForeignKey(Matiére, on_delete=models.SET_NULL, null=True, blank=True)
     cour = models.CharField(max_length=100)
     partie = models.CharField(max_length=100)
-    live = models.FileField()
+    live = models.TextField()
 
 
     def __str__(self):
