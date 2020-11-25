@@ -133,10 +133,10 @@ WSGI_APPLICATION = 'khadija.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd9t4mvafduhv9p',
-        'USER': 'bkkhzfwphfesaa',
-        'PASSWORD': '7afad86151ecdb48fc1003fb66365fac91a2e0b745b6dac95fc2a6320902d24c',
-        'HOST': 'ec2-34-239-241-25.compute-1.amazonaws.com',
+        'NAME': 'd4fgnn62kfbrb6',
+        'USER': 'otusghjkhsrssl',
+        'PASSWORD': 'f0a01ee55856c92ce2d9b04336b67cb0b0c80d0fb4dd5c004427d3413dfa0b8e',
+        'HOST': 'ec2-18-211-48-247.compute-1.amazonaws.com',
         'PORT': 5432,
     }
 }
