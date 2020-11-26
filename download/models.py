@@ -65,15 +65,15 @@ class Corrigé(models.Model):
 class Classe(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     lien = models.CharField(max_length=2000)
-    matiére =  models.ForeignKey(Matiére, on_delete=models.SET_NULL, null=True, blank=True)
+    type_of_language =  models.CharField(max_length=2000)
     date =  models.CharField(max_length=200)
     heure =  models.CharField(max_length=200)
 
     def __str__(self):
         return self.heure
 class Live_ended (models.Model):
-    professeur = models.ForeignKey(Professeur, on_delete=models.SET_NULL, null=True, blank=True)
-    matiére = models.ForeignKey(Matiére, on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    matiére = models.CharField(max_length=2000)
     cour = models.CharField(max_length=100)
     partie = models.CharField(max_length=100)
     live = models.TextField()
