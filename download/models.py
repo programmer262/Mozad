@@ -63,7 +63,7 @@ class Corrigé(models.Model):
 
 
 class Classe(models.Model):
-    professeur = models.ForeignKey(Professeur, on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     lien = models.CharField(max_length=2000)
     matiére =  models.ForeignKey(Matiére, on_delete=models.SET_NULL, null=True, blank=True)
     date =  models.CharField(max_length=200)
