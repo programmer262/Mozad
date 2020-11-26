@@ -2,15 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class Matiére(models.Model):
-  matiére = models.CharField(max_length=200)
-  def __str__(self):
-        return self.matiére
-class Professeur(models.Model):
-  name = models.CharField(max_length=200)
-  matiére = models.ForeignKey(Matiére, on_delete=models.SET_NULL, null=True, blank=True)
-  def __str__(self):
-        return self.name
+
 
 class Etudiant(models.Model): 
   name = models.CharField(max_length=200)
@@ -22,7 +14,7 @@ class Etudiant(models.Model):
   
     
 class Cour(models.Model):
-    professeur = models.ForeignKey(Professeur, on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     document =models.TextField()
     cour = models.CharField(max_length=200)
     partie = models.CharField(max_length=200,null=False,blank=False)
@@ -39,7 +31,7 @@ class Cour(models.Model):
 
 
 class Exercice(models.Model):
-    professeur = models.ForeignKey(Professeur, on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     document = models.TextField()
     exercice = models.CharField(max_length=200)
     def __str__(self):
@@ -54,7 +46,7 @@ class Exercice(models.Model):
            return url
 
 class Corrigé(models.Model):
-    professeur = models.ForeignKey(Professeur, on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     document = models.TextField()
     correction_name = models.CharField(max_length=200)
     def __str__(self):
@@ -67,26 +59,8 @@ class Corrigé(models.Model):
                url = ''
            return url
 
-class heure(models.Model):
-    heure = models.CharField(max_length=20)
-    def __str__(self):
-            return self.heure
-class emploi(models.Model):
-    heure = models.CharField(max_length=20)
-    def __str__(self):
-            return self.heure
-class Présence(models.Model):
-    professeur_qui_a_approuvé = models.ForeignKey(Professeur, on_delete=models.SET_NULL, null=True, blank=True)
-    marqué_la_présence =  models.ForeignKey(Etudiant, on_delete=models.SET_NULL, null=True, blank=True)
-    les_éléves_qui_vont_étre_marqué =  models.CharField(max_length=20)
-    matiére = models.ForeignKey(Matiére, on_delete=models.SET_NULL, null=True, blank=True)
-    présence = models.BooleanField(default=True,null=True, blank=True)
-    date =  models.CharField(max_length=200)
-    heure = models.ForeignKey(heure, on_delete=models.SET_NULL, null=True, blank=True)
-    combien_du_heure = models.ForeignKey(emploi, on_delete=models.SET_NULL, null=True, blank=True)
 
-    def __str__(self):
-        return self.les_éléves_qui_vont_étre_marqué
+
 
 class Classe(models.Model):
     professeur = models.ForeignKey(Professeur, on_delete=models.SET_NULL, null=True, blank=True)
