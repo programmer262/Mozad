@@ -1,21 +1,35 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Create your models here.
+class Matiére(models.Model):
+  matiére = models.CharField(max_length=2000)
 
-
-class Etudiant(models.Model): 
-  name = models.CharField(max_length=200)
+  def __str__(self):
+        return self.matiére
+class Professor(models.Model): 
+  user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+  first_name = models.CharField(max_length=200)
+  last_name = models.CharField(max_length=200)
   email = models.CharField(max_length=2000)
   téléphone = models.CharField(max_length=16)
 
   def __str__(self):
-        return self.name
+        return self.first_name + ' ' +self.last_name
+  
+class Etudiant(models.Model): 
+  user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+  first_name = models.CharField(max_length=200)
+  last_name = models.CharField(max_length=200)
+  email = models.CharField(max_length=2000)
+  téléphone = models.CharField(max_length=16)
+
+  def __str__(self):
+        return self.first_name + ' ' +self.last_name
   
     
 class Cour(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-    document =models.TextField()
+    document =models.FileField()
     cour = models.CharField(max_length=200)
     partie = models.CharField(max_length=200,null=False,blank=False)
     def __str__(self):
@@ -29,10 +43,9 @@ class Cour(models.Model):
                url = ''
            return url
 
-
 class Exercice(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-    document = models.TextField()
+    document = models.FileField()
     exercice = models.CharField(max_length=200)
     def __str__(self):
         return self.exercice
@@ -47,7 +60,7 @@ class Exercice(models.Model):
 
 class Corrigé(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-    document = models.TextField()
+    document = models.FileField()
     correction_name = models.CharField(max_length=200)
     def __str__(self):
         return self.correction_name
@@ -76,7 +89,7 @@ class Live_ended (models.Model):
     matiére = models.CharField(max_length=2000)
     cour = models.CharField(max_length=100)
     partie = models.CharField(max_length=100)
-    live = models.TextField()
+    live = models.FileField()
 
 
     def __str__(self):
