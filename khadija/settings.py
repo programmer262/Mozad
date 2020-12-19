@@ -23,14 +23,14 @@ SECRET_KEY = 'gso5fc6^ps3wkk2re^ann3r2v!psc*_-uc%u-f2rd^-rv(#24_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['khadioumelmouminine.herokuapp.com','learncodingprogrammer262.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['demo_programmer262.herokuapp.com','127.0.0.1']
 JAZZMIN_SETTINGS = {
-  "site_title": "2BAC-PC-F-A-2",
-  "site_header": "2BAC-PC-F-A-2",
+  "site_title": "Demo",
+  "site_header": "Demo",
   "site_logo": "docs/jjj.png",
-  "welcome_sign": "Welcome to the 2BAC-PC-F-A-2 .Only for students of khadija oum elmouminine!!!",
+  "welcome_sign": "Welcome to the Demo of achraf chahin .Only for students of khadija oum elmouminine!!!",
   "copyright" : "Developers United Ltd",
-  "search_model": "download.classe",
+  "search_model": "auth.user",
   "user_avatar": None,
   "topmenu_links": [
 
@@ -38,7 +38,6 @@ JAZZMIN_SETTINGS = {
         {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
 
         # external url that opens in a new window (Permissions can be added)
-        {"name": "Support", "url":"https://developers-united.netlify.app", "new_window":True},
         {"name": "View Site", "url": "https://khadioumelmouminine.herokuapp.com/", "new_window":True},
 
         # model admin to link to (Permissions checked against model)
@@ -48,35 +47,22 @@ JAZZMIN_SETTINGS = {
         {"app": "download"},
     ],
    "usermenu_links": [
-        {"name": "Support", "url": "https://developers-united.netlify.app", "new_window":True},
-        {"name": "View Site", "url": "https://khadioumelmouminine.herokuapp.com/", "new_window":True},
+        {"name": "View Site", "url": "https://demo_programmer262.herokuapp.com/", "new_window":True},
         {"model": "auth.user"}
     ],
     "show_sidebar": True,
-    "navigation_expanded": True,
     "hide_apps": [],
-    "hide_models": [],
-    "order_with_respect_to": ["auth", "download", "download.Etudiant", "download.professor"],
+    "order_with_respect_to": ["auth"],
     "icons": {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
-        "download.professeur":"fas fa-chalkboard-teacher",
-        "download.etudiant":"fas fa-user-graduate",
-        "download.emploi":"fas fa-hourglass-half",
-        "download.classe":"far fa-eye",
-        "download.live_ended":"far fa-eye-slash",
-        "download.cour":"fas fa-book-reader",
-        "download.exercice":"fas fa-book",
-        "download.corrigé":"fas fa-book",
-        "download.matiére":"fas fa-school",
-        "download.heure":"fas fa-hourglass",
-        "download.présence":"fas fa-graduation-cap"
+ 
 
     },
     "related_modal_active": True,
     "changeform_format": "horizontal_tabs",
-    "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs",},
+    "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs","store.product": "vertical_tabs",},
     "language_chooser": False,
 
 }
@@ -84,16 +70,14 @@ JAZZMIN_SETTINGS = {
 
 INSTALLED_APPS = [ 
     'jazzmin',
+    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'download',
-   'cloudinary',
-
-]
+    'download',]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,37 +109,18 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'khadija.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd4fgnn62kfbrb6',
+        'NAME': 'd6s3sb1u74p7sg',
         'USER': 'otusghjkhsrssl',
-        'PASSWORD': 'f0a01ee55856c92ce2d9b04336b67cb0b0c80d0fb4dd5c004427d3413dfa0b8e',
-        'HOST': 'ec2-18-211-48-247.compute-1.amazonaws.com',
+        'PASSWORD': 'fc77be2d4965e9e731749fcb0e6634fbcab3fc300a5b9ee43dfb917bace083b7',
+        'HOST': 'ec2-184-73-249-9.compute-1.amazonaws.com',
         'PORT': 5432,
     }
 }
 
-CLOUDINARY = {
-  'cloud_name': 'dgvhdvy1r',  
-  'api_key': '861527452988112',  
-  'api_secret': 'bfJeRi4bar8B9n_bHSIN0i2zLak',  
-}
-
-# Cloudinary settings using environment variables. Add to your .bashrc
-
 # Cloudinary settings using python code. Run before pycloudinary is used.
-import cloudinary
-cloudinary.config(
-  cloud_name = 'dgvhdvy1r',  
-  api_key = '861527452988112',  
-  api_secret = 'bfJeRi4bar8B9n_bHSIN0i2zLak'  
-)
 
 
 # Password validation
@@ -189,10 +154,7 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-TEMPLATE_URL = 'templates'
-TEMPLATES_DIRS = [
-    os.path.join(BASE_DIR, 'templates')
-]
+
 STATIC_HOST = os.environ.get('DJANGO_STATIC_HOST', '')
 STATIC_URL = STATIC_HOST + '/static/'
 STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
