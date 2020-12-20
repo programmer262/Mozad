@@ -57,8 +57,14 @@ JAZZMIN_SETTINGS = {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
- 
-
+        "download.cour" : "fas fa-book-reader",
+        "download.exercice" : "fas fa-dumbbell",
+        "download.correction" : "fas fa-times",
+        "download.classe" : "fas fa-eye",
+        "download.live_ended" : "fas fa-eye-slash",
+        "download.etudiant" : "fas fa-graduation-cap",
+        "download.professor" : "fas fa-chalkboard-teacher",
+        "download.matiére" : "fas fa-brain",
     },
     "related_modal_active": True,
     "changeform_format": "horizontal_tabs",
