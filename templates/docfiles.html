@@ -1,7 +1,7 @@
 {% extends 'main.html' %}
 {% load static %}
 {% block content %}
-<p>Welcome {{request.user}} to "School Name"!</p>
+<p style="text-align:center;font-style: oblique;text-shadow: 1px 1px 2px black;">Welcome {{request.user}}!</p>
  <div class="row row-cols-1 row-cols-md-3">
 {% for cour in cours %}
   <div class="col mb-4">
@@ -9,11 +9,11 @@
       <div class="card-body">
         <h5 class="card-title">
         {{cour.professeur}}</h5>        <p class="card-text">{{cour.cour}}</p>
-         <p class="card-text">{{cour.partie}}</p>
         <a href="{{cour.docFILE}}"download><button class="btn btn-primary">Download</button></a>
+         <p class="card-text">{{cour.partie}}</p>
 
         <a href="{{cour.docFILE}}" target="_blank"><button class="btn btn-primary">view</button></a>
-         
+          <object data="{{cour.docFILE}}" type="application/pdf" width="100%" height="100%">
 
         <p class="card-text">NOTE:The view is only available for desktop user</p>
       </div>
