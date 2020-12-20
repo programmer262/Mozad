@@ -59,7 +59,7 @@ JAZZMIN_SETTINGS = {
         "auth.Group": "fas fa-users",
         "download.cour" : "fas fa-book-reader",
         "download.exercice" : "fas fa-dumbbell",
-        "download.correction" : "fas fa-times",
+        "download.corrigé" : "fas fa-times",
         "download.classe" : "fas fa-eye",
         "download.live_ended" : "fas fa-eye-slash",
         "download.etudiant" : "fas fa-graduation-cap",
@@ -76,7 +76,6 @@ JAZZMIN_SETTINGS = {
 
 INSTALLED_APPS = [ 
     'jazzmin',
-    'cloudinary',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
