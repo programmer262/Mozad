@@ -275,6 +275,9 @@ form.sign-in-form {
     min-height: 800px;
     height: 100vh;
   }
+  .container:before{
+    background: transparent;
+  }
   .signin-signup {
     width: 100%;
     top: 95%;
@@ -336,11 +339,8 @@ form.sign-in-form {
   }
 
   .container:before {
-    width: 1500px;
-    height: 1500px;
     transform: translateX(-50%);
-    left: 30%;
-    bottom: 68%;
+
     right: initial;
     top: initial;
     transition: 2s ease-in-out;
