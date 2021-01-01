@@ -45,7 +45,7 @@ def loginPage(request):
 			else:
 	 			messages.info(request, 'Username OR password is incorrect')
 	context = {}
-	return render(request, 'login.html', context)
+	return render(request, 'lo.html', context)
 
 def logoutUser(request):
 	logout(request)
@@ -66,3 +66,4 @@ def error(request):
     cours = Cour.objects.all()
     context = {'cours':cours}
     return render(request, 'courview.html', context)
+  
