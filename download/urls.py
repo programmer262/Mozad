@@ -11,4 +11,5 @@ urlpatterns = [
 	path('classe/', views.classe, name="classe"),
 	path('endlive/', views.live, name="live"),
 	path('error/', views.error, name="error"),
-    ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
