@@ -12,15 +12,7 @@ class Matiére(models.Model):
 
   def __str__(self):
         return self.matiére
-class Professor(models.Model): 
-  user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-  first_name = models.CharField(max_length=200)
-  last_name = models.CharField(max_length=200)
-  email = models.CharField(max_length=2000)
-  téléphone = models.CharField(max_length=16)
 
-  def __str__(self):
-        return self.first_name + ' ' +self.last_name
 
   
     
