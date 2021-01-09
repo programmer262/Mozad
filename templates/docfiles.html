@@ -1,7 +1,7 @@
 {% extends 'main.html' %}
 {% load static %}
 {% block content %}
-<p style="text-align:center;font-style: oblique;text-shadow: 1px 1px 2px black;">Welcome {{request.user.etudiant}}!</p>
+<p style="text-align:center;font-style: oblique;text-shadow: 1px 1px 2px black;">Welcome {{request.user}}!</p>
  <div class="row row-cols-1 row-cols-md-3">
 {% for cour in cours %}
   <div class="col mb-4">
