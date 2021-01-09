@@ -15,7 +15,7 @@ class Professor(models.Model):
   Matiére = models.ForeignKey(Matiére, on_delete=models.SET_NULL, null=True, blank=True)
 
   def __str__(self):
-        return self.first_name + ' ' +self.last _name
+        return self.first_name + ' ' +self.last_name
   
 class Etudiant(models.Model): 
     user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
