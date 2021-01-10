@@ -121,6 +121,20 @@
             </div>
         </div>
     </div>
+<script>$("document").ready(function (){
+    $("#shpass").on("click",function (){
+        let field,psType;
+        field = $("#password");
+        psType =field.attr("type");
+    if(psType == "password"){
+        field.attr("type","text");
+        $(this).text("Hide");
+    }else{
+      field.attr("type","password");
+        $(this).text("Show");  
+    }
+    });
+});</script>
 </body>
 
 </html>
