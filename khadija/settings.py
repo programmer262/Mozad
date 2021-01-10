@@ -47,7 +47,7 @@ JAZZMIN_SETTINGS = {
         {"app": "download"},
     ],
    "usermenu_links": [
-        {"name": "View Site", "url": "https://demo_programmer262.herokuapp.com/", "new_window":True},
+        {"name": "View Site", "url": "https://demoprogrammer262.herokuapp.com/", "new_window":True},
         {"model": "auth.user"}
     ],
     "show_sidebar": True,
