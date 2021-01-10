@@ -28,7 +28,7 @@ JAZZMIN_SETTINGS = {
   "site_title": "Demo",
   "site_header": "Demo",
   "site_logo": "docs/jjj.png",
-  "welcome_sign": "Welcome to the Demo of achraf chahin .Only for students of khadija oum elmouminine!!!",
+  "welcome_sign": "Welcome to the Demo of achraf chahin!!!",
   "copyright" : "Developers United Ltd",
   "search_model": "auth.user",
   "user_avatar": None,
