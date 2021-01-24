@@ -8,6 +8,6 @@ admin.site.register(Exercice)
 admin.site.register(Corrigé)
 admin.site.register(Classe)
 admin.site.register(Live_ended)
-@admin.register(Professeur)
-class ProfesseurAdmin(admin.ModelAdmin):
+@admin.register(Professor)
+class ProfessorAdmin(admin.ModelAdmin):
      list_display = ['user','telephone','email','matiére']
