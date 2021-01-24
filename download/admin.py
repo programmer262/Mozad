@@ -4,7 +4,7 @@ from .models import *
 
 @admin.register(Cour)
 class CourAdmin(admin.ModelAdmin):
-     list_display = ['Professor','Cour','Partie','Document']
+     list_display = ['Professor','cour','partie','document']
      
 admin.site.register(Matiére)
 admin.site.register(Etudiant)
