@@ -5,7 +5,8 @@ from .models import *
 @admin.register(Cour)
 class CourAdmin(admin.ModelAdmin):
      list_display = ['Professor','cour','partie','document']
-     
+     list_filter = ['cour','document']
+     search_fields = ['cour','Professor']
 admin.site.register(Matiére)
 admin.site.register(Etudiant)
 admin.site.register(Exercice)
