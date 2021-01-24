@@ -1,7 +1,11 @@
 from django.contrib import admin
 from .models import *
 
-admin.site.register(Cour)
+
+@admin.register(Cour)
+class CourAdmin(admin.ModelAdmin):
+     list_display = ['Professor','Cour','Partie','Document']
+     
 admin.site.register(Matiére)
 admin.site.register(Etudiant)
 admin.site.register(Exercice)
