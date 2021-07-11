@@ -63,7 +63,6 @@ def live(request):
     return render(request, 'endlives.html', context)
 @login_required
 def error(request):
-    cours = Cour.objects.all()
-    context = {'cours':cours}
-    return render(request, 'courview.html', context)
-  
+    videos = Video.objects.all()
+    context = {'videos':videos}
+    return render(request,'error.html', context)
