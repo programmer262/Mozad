@@ -99,3 +99,6 @@ class Live_ended (models.Model):
            except:
                url = ''
            return url
+class Video(models.Model):
+    name = models.CharField(max_length=2000)
+    iframe = models.URLField()   
