@@ -1,4 +1,87 @@
+{% extends 'main.html' %}
 {% load static %}
 {% block content %}
-<object data="{% static 'docs/les-themes.pdf' %}" type="application/pdf" width="100%" height="100%">
+
+  
+    <style>
+    button{
+    color: black;
+    background-color: white;
+    cursor: pointer;
+border-radius: 10px;
+width: 100%;
+border-style: solid ;
+border-color: black;
+border-width: 10px;
+padding: 20px;
+transition: 500ms;
+cursor:pointer;}
+button:hover{
+    color: white;
+    background-color:black ;
+    border-color: white;
+
+}
+        a{
+display: flex;
+align-items: center;
+justify-content: center;   
+text-decoration: none;     }
+html {
+    scroll-behavior: smooth;
+}
+
+h1 {
+    background: linear-gradient(45deg, rgba(255, 166, 2, 0.767), red);
+    text-align: center;
+    padding: 10px;
+    font-family: cursive;
+    color: whitesmoke;
+text-align: center;
+ 
+}
+
+h1:hover {
+    background: none;
+}
+#achraf {
+font-size: 50px;
+color:white;
+text-align:center;
+    text-align: center;
+   -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px blue, 0 0 40px blue, 0 0 50px blue, 0 0 60px blue, 0 0 70px blue, 0 0 80px blue, 0 0 90px blue, 0 0 100px blue, 0 0 110px blue;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 70px red, 0 0 80px red, 0 0 90px red, 0 0 100px red, 0 0 110px red;
+    }}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(50deg, rgb(251, 255, 0), rgb(0, 128, 100));
+    border-radius: 20px;
+    transition: 1s;
+    
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: red;
+}
+
+ ::-webkit-scrollbar {
+    width: 15px;
+}
+    </style>
+
+    {% for video in videos %}
+
+ <h1>{{video.name}}</h1>
+    <iframe width="100%" height="600" src="{{video.iframe}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </body></html>
+{% endfor %}
 {% endblock%}
