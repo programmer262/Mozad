@@ -16,3 +16,7 @@ admin.site.register(Live_ended)
 @admin.register(Professor)
 class ProfessorAdmin(admin.ModelAdmin):
      list_display = ['user','téléphone','email','Matiére']
+@admin.register(Video)
+class VideoAdmin(admin.ModelAdmin):
+      list_display = ['name']
+
