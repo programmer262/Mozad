@@ -12,8 +12,10 @@ import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
+DROPBOX_ACCESS_TOKEN = 'sl.A0uSEGiuOjXtSy_OCCKaWZBohRD26UPFTP9JlZtC7xAjKtOEwNbWY0YrMI1-aDuh3kE5ji8pGL0EXVGDRRd__h992FF3R1yRJPWKLmsTqZZHHY9zqkBNeb4a0UKDHmu2lGWXTMk'
+DROPBOX_ROOT_FOLDER = '/Public'
+DROPBOX_CONSUMER_KEY = 'k35xdhky2h9dlkt'
+DROPBOX_CONSUMER_SECRET = 'e3fp0jrnh216j3y'
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -22,6 +24,7 @@ SECRET_KEY = 'gso5fc6^ps3wkk2re^ann3r2v!psc*_-uc%u-f2rd^-rv(#24_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+DEFAULT_FILE_STORAGE = 'django_dropbox_storage.storage.DropboxStorage'
 
 ALLOWED_HOSTS = ['demoprogrammer262.herokuapp.com','127.0.0.1']
 JAZZMIN_SETTINGS = {
@@ -76,6 +79,7 @@ JAZZMIN_SETTINGS = {
 
 INSTALLED_APPS = [ 
     'jazzmin',
+    'django_dropbox_storage',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
