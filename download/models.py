@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_dropbox_storage.storage import DropboxStorage
+DROPBOX_STORAGE = DropboxStorage()
 
 class Matiére(models.Model):
   matiére = models.CharField(max_length=2000)
@@ -27,7 +29,7 @@ class Etudiant(models.Model):
     
 class Cour(models.Model):
     Professor = models.ForeignKey(Professor, on_delete=models.SET_NULL, null=True, blank=True)
-    document =models.FileField()
+    document =models.FileField(storage=DROPBOX_STORAGE)
     cour = models.CharField(max_length=200)
     partie = models.CharField(max_length=200,null=False,blank=False)
     def __str__(self):
@@ -43,7 +45,7 @@ class Cour(models.Model):
 
 class Exercice(models.Model):
     Professor = models.ForeignKey(Professor, on_delete=models.SET_NULL, null=True, blank=True)
-    document = models.FileField()
+    document = models.FileField(storage=DROPBOX_STORAGE)
     exercice = models.CharField(max_length=200)
     def __str__(self):
         return self.exercice
@@ -58,7 +60,7 @@ class Exercice(models.Model):
 
 class Corrigé(models.Model):
     Professor = models.ForeignKey(Professor, on_delete=models.SET_NULL, null=True, blank=True)
-    document = models.FileField()
+    document = models.FileField(storage=DROPBOX_STORAGE)
     correction_name = models.CharField(max_length=200)
     def __str__(self):
         return self.correction_name
@@ -87,7 +89,7 @@ class Live_ended (models.Model):
     matiére = models.CharField(max_length=2000)
     cour = models.CharField(max_length=100)
     partie = models.CharField(max_length=100)
-    live = models.FileField()
+    live = models.FileField(storage=DROPBOX_STORAGE)
 
 
     def __str__(self):
