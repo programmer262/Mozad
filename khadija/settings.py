@@ -8,15 +8,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-DROPBOX_ACCESS_TOKEN = 'sl.A0uSEGiuOjXtSy_OCCKaWZBohRD26UPFTP9JlZtC7xAjKtOEwNbWY0YrMI1-aDuh3kE5ji8pGL0EXVGDRRd__h992FF3R1yRJPWKLmsTqZZHHY9zqkBNeb4a0UKDHmu2lGWXTMk'
-DROPBOX_ROOT_FOLDER = '/Public'
-DROPBOX_CONSUMER_KEY = 'k35xdhky2h9dlkt'
-DROPBOX_CONSUMER_SECRET = 'e3fp0jrnh216j3y'
-# Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -24,9 +18,9 @@ SECRET_KEY = 'gso5fc6^ps3wkk2re^ann3r2v!psc*_-uc%u-f2rd^-rv(#24_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-DEFAULT_FILE_STORAGE = 'django_dropbox_storage.storage.DropboxStorage'
 
-ALLOWED_HOSTS = ['demoprogrammer262.herokuapp.com','127.0.0.1']
+
+ALLOWED_HOSTS = ['demoprogrammer262.herokuapp.com','127.0.0.1','localhost']
 JAZZMIN_SETTINGS = {
   "site_title": "Demo",
   "site_header": "Demo",
@@ -170,7 +164,7 @@ STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-MEDIA_URL = '/docs/'
+MEDIA_URL = '/documents/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/docs')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

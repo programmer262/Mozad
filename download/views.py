@@ -11,17 +11,16 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 from .models import *
-@login_required
 def cour(request):
     cours = Cour.objects.all()
     context = {'cours':cours}
     return render(request, 'docfiles.html', context)
-@login_required
+
 def exercice(request):
     exercices = Exercice.objects.all()
     context = {'exercices':exercices}
     return render(request, 'exercices.html', context)
-@login_required
+
 def correction(request):
     corrigés = Corrigé.objects.all()
     context = {'corrigés':corrigés}
@@ -51,18 +50,21 @@ def logoutUser(request):
 	logout(request)
 	return redirect('login')
 
-@login_required
+
 def classe(request):
     classes = Classe.objects.all()
     context = {'classes':classes}
     return render(request, 'Live.html', context)
-@login_required
 def live(request):
     lives = Live_ended.objects.all()
     context = {'lives':lives}
     return render(request, 'endlives.html', context)
-@login_required
+
 def error(request):
     videos = Video.objects.all()
     context = {'videos':videos}
     return render(request,'error.html', context)
+def view(request,pk):
+    view = Cour.objects.get(id=pk)
+    context = {'view':view}
+    return render(request,'courview.html',context)

@@ -13,7 +13,7 @@
         <a href="{{cour.docFILE}}"download><button class="btn btn-primary">Download</button></a>
          <p class="card-text">{{cour.partie}}</p>
 
-        <a href="{{cour.docFILE}}" target="_blank"><button class="btn btn-primary">view</button></a>
+        <a href="{% url 'view' cour.id %}" target="_blank"><button class="btn btn-primary">view</button></a>
 
         <p class="card-text">NOTE:The view is only available for desktop user</p>
       </div>
