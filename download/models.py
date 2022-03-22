@@ -34,13 +34,6 @@ class Cour(models.Model):
     def __str__(self):
         return self.cour
 
-    @property
-    def docFILE(self):
-           try:
-               url = self.document.url
-           except:
-               url = ''
-           return url
 
 class Exercice(models.Model):
     Professor = models.ForeignKey(Professor, on_delete=models.SET_NULL, null=True, blank=True)
