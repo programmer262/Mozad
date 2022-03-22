@@ -15,7 +15,6 @@ Brotli==1.0.9
 CacheControl==0.12.6
 cachy==0.3.0
 celery==5.0.1
-certifi==2020.06.20
 cffi==1.14.3
 chardet==3.0.4
 cleo==0.8.1
