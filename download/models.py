@@ -28,7 +28,7 @@ class Etudiant(models.Model):
 class Cour(models.Model):
     Professor = models.ForeignKey(Professor, on_delete=models.SET_NULL, null=True, blank=True)
     document =models.FileField()
-    cour = models.CharField(max_length=200)
+    cour = models.URLField()   
     partie = models.CharField(max_length=200,null=False,blank=False)
     def __str__(self):
         return self.cour
